@@ -17,7 +17,16 @@ router.get('/', (req, res, next) => {
    });
 });
 
-
+router.get('/books', (req, res, next) => 
+{
+ 
+      res.render('books/index', {
+        title: 'Books',
+        page: 'books',
+        books: ''
+      });
+    
+  });
 
 
 module.exports = router;

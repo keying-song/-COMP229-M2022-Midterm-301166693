@@ -17,7 +17,24 @@ router.get('/', (req, res, next) => {
    });
 });
 
+/* GET home page. wildcard */
+router.get('/books', (req, res, next) => 
+{
+  // find all books in the books collection
+  book.find( (err, books) => {
+    if (err) {
+      return console.error(err);
+    }
+    else {
+      res.render('books/index', {
+        title: 'Books',
+        page: 'books',
+        books: books
+      });
+    }
+  });
 
+});
 
 
 module.exports = router;

@@ -7,29 +7,25 @@ export default router;
 import book from '../Models/books';
 
 /* GET books List page. READ */
-
-router.get('/', (req, res, next) => 
+router.get('/books', (req, res, next) => 
 {
-  // find all books in the books collection
-  book.find( (err, books) => {
-    if (err) {
-      return console.error(err);
-    }
-    else {
+ 
       res.render('books/index', {
         title: 'Books',
         page: 'books',
-        books: books
+        books: ''
       });
-    }
+    
   });
 
-});
+
 
 //  GET the Book Details page in order to add a new Book
 router.get('/add', (req, res, next) => {
 
-    res.render('books/details',{title:'Add', page:'add', books:''});
+    /*****************
+     * ADD CODE HERE *
+     *****************/
 
 });
 
