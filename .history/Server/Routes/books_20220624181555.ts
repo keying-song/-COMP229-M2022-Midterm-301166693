@@ -76,8 +76,8 @@ router.post('/:id', (req, res, next) => {
 });
 
 // GET - process the delete by user id
-router.get('/delete/:id', (req, res, next) => {
-    let id = req.params.id;
+router.get('/delete/id', (req, res, next) => {
+    let id = req.params._id;
     // pass the id to database and delete the book
   book.remove({_id:req.params.id}, function(err)
   {

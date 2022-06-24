@@ -81,12 +81,7 @@ router.get('/delete/:id', (req, res, next) => {
     // pass the id to database and delete the book
   book.remove({_id:req.params.id}, function(err)
   {
-    if(err)
-    {
-      console.error(err);
-      res.end(err);
-    }
-
+    
     // delete was successful
     res.redirect('/books');});
 });
