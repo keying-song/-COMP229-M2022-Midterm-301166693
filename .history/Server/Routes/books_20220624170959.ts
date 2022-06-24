@@ -44,7 +44,7 @@ router.post('/add', (req, res, next) => {
        Author: req.body.author,
        Genre: req.body.genre
    });
-    book.create(newbook, function(err)
+   books.create(newbook, function(err: ErrorCallback)
    {
        if(err)
        {
@@ -52,7 +52,7 @@ router.post('/add', (req, res, next) => {
              console.error(err);
              res.end(err);     
        }
-       return res.redirect('/books');
+       return res.redirect('/contact-list');
 
    });
 

@@ -52,7 +52,7 @@ router.post('/add', (req, res, next) => {
              console.error(err);
              res.end(err);     
        }
-       return res.redirect('/books');
+       return res.redirect('/');
 
    });
 

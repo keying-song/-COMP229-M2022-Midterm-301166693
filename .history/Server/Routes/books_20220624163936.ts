@@ -42,18 +42,7 @@ router.post('/add', (req, res, next) => {
        Title: req.body.title,
        Price: req.body.price,
        Author: req.body.author,
-       Genre: req.body.genre
-   });
-    book.create(newbook, function(err)
-   {
-       if(err)
-       {
-         
-             console.error(err);
-             res.end(err);     
-       }
-       return res.redirect('/books');
-
+       Genre
    });
 
 });
