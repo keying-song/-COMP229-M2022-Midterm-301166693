@@ -87,18 +87,17 @@ router.post('/:id', (req, res, next) => {
      *****************/
     let id = req.params.id;
 
-   // instantiate a new book to Edit
-   let updatedBook = new book
+   // instantiate a new Contact to Edit
+   let updatedContact = new Contact
    ({
        _id: id,
-       Title: req.body.title,
-       Price: req.body.price,
-       Author: req.body.author,
-       Genre: req.body.genre
+       Name: req.body.contactname,
+       Phone: req.body.phone,
+       Email: req.body.email
    });
  
-   //update the book in database
-   book.updateOne({_id: id}, updatedBook, function(err:ErrorCallback)
+   // update the movie in the database
+   Contact.updateOne({_id: id}, updatedContact, function(err:ErrorCallback)
    {
      if(err)
      {
@@ -106,8 +105,8 @@ router.post('/:id', (req, res, next) => {
        res.end(err);
      }
  
-     // edit was successful -> go to the books page
-     res.redirect('/books');
+     // edit was successful -> go to the contact-list page
+     res.redirect('/contact-list');
    });
 
    

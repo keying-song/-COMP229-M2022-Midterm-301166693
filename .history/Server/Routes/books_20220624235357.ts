@@ -98,7 +98,7 @@ router.post('/:id', (req, res, next) => {
    });
  
    //update the book in database
-   book.updateOne({_id: id}, updatedBook, function(err:ErrorCallback)
+   Contact.updateOne({_id: id}, updatedContact, function(err:ErrorCallback)
    {
      if(err)
      {
@@ -106,8 +106,8 @@ router.post('/:id', (req, res, next) => {
        res.end(err);
      }
  
-     // edit was successful -> go to the books page
-     res.redirect('/books');
+     // edit was successful -> go to the contact-list page
+     res.redirect('/contact-list');
    });
 
    

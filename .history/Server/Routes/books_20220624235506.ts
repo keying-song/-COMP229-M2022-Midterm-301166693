@@ -106,7 +106,7 @@ router.post('/:id', (req, res, next) => {
        res.end(err);
      }
  
-     // edit was successful -> go to the books page
+     // edit was successful -> go to the contact-lis page
      res.redirect('/books');
    });
 
