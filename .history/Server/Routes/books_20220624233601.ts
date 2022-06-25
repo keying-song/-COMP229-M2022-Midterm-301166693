@@ -76,7 +76,7 @@ router.get('/:id', (req, res, next) => {
      }
  
      // show the edit view with the data
-     res.render('books/details', { title: 'Edit', page: 'edit', books:bookToEdit})
+     res.render('/books/details', { title: 'Edit', page: 'edit', book })
    });
 });
 

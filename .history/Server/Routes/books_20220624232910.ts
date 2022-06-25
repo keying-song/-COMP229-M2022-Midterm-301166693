@@ -64,20 +64,7 @@ router.get('/:id', (req, res, next) => {
     /*****************
      * ADD CODE HERE *
      *****************/
-   let id = req.params.id;
-   // pass the id to the db and read the contact into the edit page
-   
-   book.findById(id, {}, {}, function(err, bookToEdit)
-   {
-     if(err)
-     {
-       console.error(err);
-       res.end(err);
-     }
- 
-     // show the edit view with the data
-     res.render('books/details', { title: 'Edit', page: 'edit', books:bookToEdit})
-   });
+    
 });
 
 // POST - process the information passed from the details form and update the document

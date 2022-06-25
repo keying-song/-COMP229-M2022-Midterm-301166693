@@ -67,7 +67,7 @@ router.get('/:id', (req, res, next) => {
    let id = req.params.id;
    // pass the id to the db and read the contact into the edit page
    
-   book.findById(id, {}, {}, function(err, bookToEdit)
+   Contact.findById(id, {}, {}, function(err, contactToEdit)
    {
      if(err)
      {
@@ -76,7 +76,7 @@ router.get('/:id', (req, res, next) => {
      }
  
      // show the edit view with the data
-     res.render('books/details', { title: 'Edit', page: 'edit', books:bookToEdit})
+     res.render('index', { title: 'Edit', page: 'edit', contact: contactToEdit, displayName:  UserDisplayName(req) })
    });
 });
 

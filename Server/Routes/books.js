@@ -40,12 +40,20 @@ router.post('/add', (req, res, next) => {
     });
 });
 router.get('/:id', (req, res, next) => {
+    let id = req.params.id;
+    books_1.default.findById(id, {}, {}, function (err, bookToEdit) {
+        if (err) {
+            console.error(err);
+            res.end(err);
+        }
+        res.render('books/details', { title: 'Edit', page: 'edit', books: bookToEdit });
+    });
 });
 router.post('/:id', (req, res, next) => {
 });
 router.get('/delete/:id', (req, res, next) => {
     let id = req.params.id;
-    books_1.default.remove({ _id: id }, function (err) {
+    books_1.default.remove({ _id: req.params.id }, function (err) {
         if (err) {
             console.error(err);
             res.end(err);
