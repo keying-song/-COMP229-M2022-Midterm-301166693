@@ -1,6 +1,6 @@
 
 "use strict";
-/*app.js-Keying Song-301166693-midterm-my book list*/
+/*app.css-Keying Song-301166693*/
 
 (function () {
     function confirmDelete() {
