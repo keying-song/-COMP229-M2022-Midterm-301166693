@@ -12,7 +12,7 @@ import mongoose, { mongo } from 'mongoose';
 import * as DBConfig from './db';
 
 
-mongoose.connect(DBConfig.RemoteURI|| DBConfig.LocalURI);
+mongoose.connect(DBCon|| DBConfig.LocalURI);
 
 const db = mongoose.connection; // alias for the mongoose connection
 db.on("error", function()
